@@ -3,7 +3,7 @@ import re
 with open('input5.txt', 'r') as f:
     lst = f.readlines()
     stackMap = [re.split(r'(\s+)', row) for row in lst[:8]]
-    stacks = ['','','','','','','','','']
+    stacks = ['']*9
     for s in stackMap:
         i = 0
         for item in s:
