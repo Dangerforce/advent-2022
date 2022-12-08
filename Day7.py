@@ -1,25 +1,18 @@
 class Directory:
-
     def __init__(self, n = '/', p = None):
         self.name = n
         self.children = {}
         self.mem = 0
         self.parent = p
-    
     def addChild(self, dir):
         self.children[dir] = Directory(n = dir,p=self)
-    
     def memory(self):
         return self.mem + sum([v.memory() for k,v in self.children.items()])
 
-
 class FilePointer:
-
     def __init__(self, current=None):
         self.cur = current
-    
     def cd(self, inst):
-        
         if inst == '..':
             self.cur = self.cur.parent
         else:
